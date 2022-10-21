@@ -11,6 +11,9 @@
     
     <link rel="stylesheet" type="text/css" href="styles/siteStyle.css" />
     <link rel="stylesheet/less" type="text/css" href="styles/styles.less" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     
     <!-- LESS setup -->
      <script>less = { env: 'development'};</script>
@@ -20,7 +23,94 @@
 </head>
 
 <body>
+    <header>
+        <img src="images/logo.svg" alt="Simpleview logo">
+        <a href="#" class="menu"></a>
+        <nav>
+            <ul>
+                <li><a href="#">EXPLORE</a></li>
+                <li><a href="#">STAY</a></li>
+                <li><a href="#">EXPERIENCE</a></li>
+                <li><a href="#">TRAVEL</a></li>
+                <li><a href="#">ABOUT</a></li>
+            </ul>
+            <a href="" class="search"></a>
+        </nav>
+        
+    </header>
+    
+    <main>
+        <section class="gallery">
+            <div class="slider">
+                <a href="" class="leftarrow"></a>
+                <h1>Explore the breathtaking mountain ranges</h1>
+                <a href="" class="rightarrow"></a>
+            </div>
+            
+            <!-- Add classes to be called in js slideshow -->
+            <div>
+                <img src="images/img_maingallery_couplemountains.jpg" alt="Couple viewing a mountain range">
+            </div>
 
+            <div>
+                <img src="images/img_maingallery_manonrock.jpg" alt="Person atop a rocky ridge">
+            </div>
+
+            <div>
+                <img src="images/img_maingallery_streetlights.jpg" alt="Neon lit street timelapse">
+            </div>
+        </section>
+
+        <section class="abouttext">
+            <h2>Welcome to the Simpleview Europe</h2>
+            <p>WE HAVE BEEN PROVIDING INNOVATIVE PRACTICAL TECHNOLOGY SOLUTIONS TO DESTINATIONS ACROSS EUROPE FOR TWENTY YEARS.</p>
+            <p>Simpleview is a pan-European digital agency specialising in the tourism sector. Since the late 1990's we have been developing solutions for a wide range of Destination Management Organisations, working with National and Regional Tourist Boards</p>
+        </section>
+
+        <section class="infocards">
+            <div class="explore">
+                <div>
+                    <h3>Explore</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nisi numquam mollitia nemo magnam officia dolor!</p>
+                </div>
+                <div class="cardarrow"></div>
+                <img src="images/img_block_explore.jpg" alt="Person leaping across rocks">
+            </div>
+
+            <div class="experience">
+                <div>
+                    <h3>Experience</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nisi numquam mollitia nemo magnam officia dolor!</p>
+                </div>
+                <div class="cardarrow"></div>
+                <img src="images/img_block_experience.jpg" alt="People waving a flag over a mountain range">
+            </div>
+
+            <div class="travel">
+                <div>
+                    <h3>Travel</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nisi numquam mollitia nemo magnam officia dolor!</p>
+                </div>
+                <div class="cardarrow"></div>
+                <img src="images/img_block_travel.jpg" alt="Yellow bus loaded with baggage">
+            </div>
+
+            <div class="places">
+                <div>
+                    <h3>Places to Stay</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nisi numquam mollitia nemo magnam officia dolor!</p>
+                </div>
+                <div class="cardarrow"></div>
+                <img src="images/img_block_placestostay.jpg" alt="Person happily jumping on a bed">
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <h4>&copy; Copyright Simpleview 2020</h4>
+        <img src="images/logo_footer.svg" alt="Simpleview name and logo">
+    </footer>
 </body>
 
 </html>

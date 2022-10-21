@@ -1,3 +1,15 @@
+@font-face {
+    font-family: leagueSpartan;
+    src: url(LeagueSpartan-Bold.otf);
+}
+
+* {
+    font-family: leagueSpartan;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
 
 }
