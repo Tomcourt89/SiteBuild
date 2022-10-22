@@ -2,7 +2,6 @@
     font-family: leagueSpartan;
     src: url(LeagueSpartan-Bold.otf);
 }
-
 * {
     font-family: leagueSpartan;
     margin: 0;
@@ -11,5 +10,65 @@
 }
 
 body {
+    /* Temp for mobile styling */
+    max-width: 320px;
+}
 
+/* Header and Nav Styling */
+header {
+    background: #1B7FCB;
+}
+header img {
+    filter: brightness(0) invert(1);
+}
+nav ul {
+    display: none;
+}
+
+/* Gallery Styling */
+.gallery h1 {
+    color: #161314;
+}
+.gallery img {
+    width: 100%;
+}
+.leftarrow {
+    background-image: url("../images/img_block_arrow.svg");
+    width: 14px;
+    height: 16px;
+}
+.rightarrow {
+    background-image: url("../images/img_block_arrow.svg");
+    transform: rotate(180deg);
+    width: 14px;
+    height: 16px;
+}
+
+/* About text styling */
+.abouttext {
+    background: #1B7FCB;
+    color: #ffffff;
+}
+
+/* Info card styling */
+.infocards {
+    color: #383A3A;
+}
+.explore h3 {
+    color: #96C11F;
+}
+.experience h3 {
+    color: #EF8512;
+}
+.travel h3 {
+    color: #009DDE;
+}
+.places h3 {
+    color: #9224DA;
+}
+
+
+/* Footer Styling */
+footer {
+    color: #383A3A;
 }
