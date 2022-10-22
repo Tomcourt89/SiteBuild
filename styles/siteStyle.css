@@ -12,47 +12,107 @@
 body {
     /* Temp for mobile styling */
     max-width: 320px;
+    margin: auto;
 }
 
 /* Header and Nav Styling */
 header {
     background: #1B7FCB;
+    display: flex;
 }
 header img {
     filter: brightness(0) invert(1);
+    height: 30px;
+    width: 30px;
+    margin: 8px;
+}
+nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
 }
 nav ul {
     display: none;
 }
 
 /* Gallery Styling */
+.gallery {
+    display: flex;
+    flex-direction: column-reverse;
+}
+.slider {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px;
+}
+.slide2, .slide3 {
+    display: none;
+}
 .gallery h1 {
     color: #161314;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: -0.72px;
+    margin: 0px 15px;
 }
-.gallery img {
+.galleryslides img {
     width: 100%;
 }
 .leftarrow {
-    background-image: url("../images/img_block_arrow.svg");
     width: 14px;
     height: 16px;
+    transform: rotate(180deg);
+    cursor: pointer;
 }
 .rightarrow {
-    background-image: url("../images/img_block_arrow.svg");
-    transform: rotate(180deg);
     width: 14px;
     height: 16px;
+    cursor: pointer;
 }
 
 /* About text styling */
 .abouttext {
     background: #1B7FCB;
     color: #ffffff;
+    padding: 13px;
 }
+.abouttext h2 {
+    font-size: 19px;
+    line-height: 21px;
+    letter-spacing: -0.76px;
+    margin: 15px 0px;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+.abouttext p {
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: -0.64px;
+}
+
 
 /* Info card styling */
 .infocards {
     color: #383A3A;
+}
+.infocards img {
+    width: 100%;
+}
+.cardtext {
+    padding: 13px;
+}
+.infocards h3 {
+    line-height: 21px;
+    font-size: 22px;
+    letter-spacing: -0.88px;
+    margin: 5px 0px;
+}
+.infocards p {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.64px;
+    margin: 5px 0px;
 }
 .explore h3 {
     color: #96C11F;
@@ -66,9 +126,26 @@ nav ul {
 .places h3 {
     color: #9224DA;
 }
+.explore, .experience, .travel, .places {
+    display: flex;
+    flex-direction: column-reverse;
+}
 
 
 /* Footer Styling */
 footer {
+    padding: 13px;
+    display: grid;
+    grid-template-rows: 2;
+    grid-gap: 15px;
+}
+footer img {
+    width: 117px;
+    justify-self: end;
+}
+footer h4 {
     color: #383A3A;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.64px;
 }
