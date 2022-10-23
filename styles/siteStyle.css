@@ -304,9 +304,31 @@ footer h4 {
         flex-direction: column;
         justify-content: center;
         padding: 50px;
+        position: relative;
     }
     .infocards img {
         width: 50%;
+    }
+    .cardleftarrow {
+        background-image: url("../images/img_block_arrow.svg");
+        background-repeat: no-repeat;
+        filter: invert(1);
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        left: -20px;
+        top: 30%;
+        transform: scaleX(-1);
+    }
+    .cardrightarrow {
+        background-image: url("../images/img_block_arrow.svg");
+        background-repeat: no-repeat;
+        filter: invert(1);
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        right: -20px;
+        top: 30%;
     }
     
     /* Footer Styling */
