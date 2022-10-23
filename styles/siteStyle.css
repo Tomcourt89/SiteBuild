@@ -10,9 +10,11 @@
 }
 
 body {
-    /* Temp for mobile styling */
-    max-width: 320px;
+    /* Screensizes larger than 1750px will center the page 
+        rather than stretch the content beyond designed bounds */
+    max-width: 1750px;
     margin: auto;
+    position: relative;
 }
 
 /* Header and Nav Styling */
@@ -21,10 +23,14 @@ header {
     display: flex;
 }
 header img {
-    filter: brightness(0) invert(1);
+    /* Filter values to reach #f5f5f5 */
+    filter: invert(100%) sepia(2%) saturate(81%) hue-rotate(196deg) brightness(114%) contrast(92%);
     height: 30px;
     width: 30px;
     margin: 8px;
+}
+.logo {
+    filter: invert(1) brightness(100);
 }
 nav {
     display: flex;
@@ -32,7 +38,9 @@ nav {
     width: 100%;
 }
 nav ul {
-    display: none;
+    visibility: hidden;
+    position: absolute;
+    left: 0;
 }
 
 /* Gallery Styling */
@@ -53,20 +61,24 @@ nav ul {
     font-size: 18px;
     line-height: 21px;
     letter-spacing: -0.72px;
-    margin: 0px 15px;
+    margin: 0px 25px;
 }
 .galleryslides img {
     width: 100%;
 }
 .leftarrow {
-    width: 14px;
-    height: 16px;
-    transform: rotate(180deg);
+    background-image: url("../images/img_block_arrow.svg");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    transform: scaleX(-1);
     cursor: pointer;
 }
 .rightarrow {
-    width: 14px;
-    height: 16px;
+    background-image: url("../images/img_block_arrow.svg");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
 }
 
@@ -74,13 +86,13 @@ nav ul {
 .abouttext {
     background: #1B7FCB;
     color: #ffffff;
-    padding: 13px;
+    padding: 10px 13px 30px 13px;
 }
 .abouttext h2 {
     font-size: 19px;
     line-height: 21px;
     letter-spacing: -0.76px;
-    margin: 15px 0px;
+    /* margin: 15px 0px; */
 }
 .uppercase {
     text-transform: uppercase;
@@ -148,4 +160,170 @@ footer h4 {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.64px;
+}
+
+
+/* Desktop Styling */
+@media only screen and (min-width: 768px) {
+
+    /* Header Styling */
+    .logo {
+        filter: unset;
+    }
+    header {
+        padding: 16px 26px 250px 26px;
+        background: linear-gradient(#1B7FCB, 60%, transparent);
+        width: 100%;
+        position: absolute;
+        z-index: 2;
+    }
+    header img {
+        height: 40px;
+        width: 45px;
+    }
+    nav {
+        justify-content: space-between;
+    }
+    nav ul {
+        visibility: visible;
+        position: unset;
+        display: flex;
+        align-items: center;
+        width: 50%;
+        justify-content: space-around;
+        list-style-type: none;
+    }
+    nav ul li a {
+        text-decoration: none;
+        color: #f5f5f5;
+        font-size: 15px;
+        line-height: 37.4px;
+    }
+
+
+    /* Gallery Styling */
+    .gallery {
+        position: relative;
+    }
+    .slider {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        justify-content: space-between;
+        align-items: center;
+    }
+    .gallery h1 {
+        color: #ffffff;
+        font-size: 66px;
+        line-height: 68px;
+        letter-spacing: -0.40px;
+        flex: 3;
+    }
+    .leftarrow {
+        background-image: url("../images/icon_gallery_arrow.svg");
+        background-repeat: no-repeat;
+        height: 50px;
+        transform: scaleX(1);
+        flex: 0.5;
+        filter: invert(100);
+        cursor: pointer;
+    }
+    .rightarrow {
+        background-image: url("../images/icon_gallery_arrow.svg");
+        background-repeat: no-repeat;
+        height: 50px;
+        transform: scaleX(-1);
+        flex: 1;
+        filter: invert(100);
+        cursor: pointer;
+    }
+
+    /* About text Styling */
+    .abouttext {
+        /* Compensating for the removed h1 */
+        margin-top: -10px;
+        padding: 45px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .abouttext h2 {
+        margin: 13px;
+        font-size: 35px;
+        line-height: 41px;
+        letter-spacing: -0.7px;
+    }
+    .abouttext p {
+        margin: 13px;
+        text-align: center;
+    }
+    .light {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: -0.36px;
+        max-width: 35%;
+    }
+    .xlight {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 200;
+        font-size: 19px;
+        line-height: 28px;
+        letter-spacing: -0.38px;
+        max-width: 60%;
+
+    }
+    /* Info card styling */
+    .infocards{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .infocards h3 {
+        font-size: 30px;
+        line-height: 31px;
+        letter-spacing: -0.6px;
+    }
+    .infocards p {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
+        font-size: 17px;
+        letter-spacing: 0px;
+    }
+    .explore, .experience {
+        flex-direction: row-reverse;
+    }
+    .travel, .places {
+        flex-direction: row;
+    }
+    .cardtext {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 50px;
+    }
+    .infocards img {
+        width: 50%;
+    }
+    
+    /* Footer Styling */
+    footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+    footer h4 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 31px;
+        letter-spacing: -0.26px;
+
+    }
+    footer img {
+        width: 167px;
+    }
 }
