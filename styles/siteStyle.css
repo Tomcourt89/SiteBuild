@@ -12,6 +12,7 @@
 body {
     /* Screensizes larger than 1750px will center the page 
         rather than stretch the content beyond designed bounds */
+    min-width: 320px;
     max-width: 1750px;
     margin: auto;
     position: relative;
@@ -41,6 +42,14 @@ nav ul {
     visibility: hidden;
     position: absolute;
     left: 0;
+    width: 0;
+    list-style-type: none;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #f5f5f5;
+    font-size: 15px;
+    line-height: 37.4px;
 }
 
 /* Gallery Styling */
@@ -92,7 +101,7 @@ nav ul {
     font-size: 19px;
     line-height: 21px;
     letter-spacing: -0.76px;
-    /* margin: 15px 0px; */
+    margin: 15px 0px;
 }
 .uppercase {
     text-transform: uppercase;
@@ -148,7 +157,7 @@ nav ul {
 footer {
     padding: 13px;
     display: grid;
-    grid-template-rows: 2;
+    grid-template-rows: 1fr 1fr;
     grid-gap: 15px;
 }
 footer img {
@@ -162,16 +171,29 @@ footer h4 {
     letter-spacing: -0.64px;
 }
 
+nav ul.active {
+    visibility: visible;
+    top: 52px;
+    height: 90vh;
+    width: 250px;
+    background: linear-gradient(to right, #1B7FCB, 95%, transparent);
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 50px;
+    transition: 0.5s;
+}
 
-/* Desktop Styling */
-@media only screen and (min-width: 768px) {
-
+/* Tablet styling (unnecessary but preserves image quality) */
+@media only screen and (min-width: 700px) {
     /* Header Styling */
     .logo {
         filter: unset;
     }
     header {
-        padding: 16px 26px 250px 26px;
+        padding: 16px 26px 16px 26px;
         background: linear-gradient(#1B7FCB, 60%, transparent);
         width: 100%;
         position: absolute;
@@ -185,13 +207,23 @@ footer h4 {
         justify-content: space-between;
     }
     nav ul {
-        visibility: visible;
+        visibility: hidden;
         position: unset;
         display: flex;
         align-items: center;
-        width: 50%;
+        width: 0;
         justify-content: space-around;
         list-style-type: none;
+        opacity: 0;
+    }
+    nav ul.active {        
+        width: 50%;
+        height: unset;
+        background: unset;
+        flex-direction: row;
+        padding-bottom: unset;
+        visibility: visible;
+        opacity: 1;
     }
     nav ul li a {
         text-decoration: none;
@@ -216,10 +248,12 @@ footer h4 {
     }
     .gallery h1 {
         color: #ffffff;
-        font-size: 66px;
         line-height: 68px;
         letter-spacing: -0.40px;
+        padding-right: 300px;
         flex: 3;
+        font-size: 45px;
+        padding: 0;
     }
     .leftarrow {
         background-image: url("../images/icon_gallery_arrow.svg");
@@ -235,7 +269,7 @@ footer h4 {
         background-repeat: no-repeat;
         height: 50px;
         transform: scaleX(-1);
-        flex: 1;
+        flex: 0.5;
         filter: invert(100);
         cursor: pointer;
     }
@@ -265,7 +299,7 @@ footer h4 {
         font-size: 18px;
         line-height: 28px;
         letter-spacing: -0.36px;
-        max-width: 35%;
+        max-width: 60%;
     }
     .xlight {
         font-family: 'Poppins', sans-serif;
@@ -279,8 +313,7 @@ footer h4 {
     /* Info card styling */
     .infocards{
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
     }
     .infocards h3 {
         font-size: 30px;
@@ -293,10 +326,10 @@ footer h4 {
         font-size: 17px;
         letter-spacing: 0px;
     }
-    .explore, .experience {
+    .explore, .travel {
         flex-direction: row-reverse;
     }
-    .travel, .places {
+    .experience, .places {
         flex-direction: row;
     }
     .cardtext {
@@ -308,6 +341,48 @@ footer h4 {
     }
     .infocards img {
         width: 50%;
+    }
+    
+    /* Footer Styling */
+    footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+    footer h4 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 31px;
+        letter-spacing: -0.26px;
+
+    }
+    footer img {
+        width: 167px;
+    }
+}
+/* Desktop Styling */
+@media only screen and (min-width: 1250px) {
+    header {
+        padding-bottom: 250px;
+    }
+    .gallery h1 {
+        font-size: 66px;
+        padding-right: 300px;
+    }
+    .light {
+        max-width: 35%;
+    }
+    /* Info card styling */
+    .infocards{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .experience {
+        flex-direction: row-reverse;
+    }
+    .travel {
+        flex-direction: row;
     }
     .cardleftarrow {
         background-image: url("../images/img_block_arrow.svg");
@@ -331,21 +406,11 @@ footer h4 {
         top: 30%;
     }
     
-    /* Footer Styling */
-    footer {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 30px;
+    /* Animations */
+    a:hover {
+        color: #96C11F;
     }
-    footer h4 {
-        font-family: 'Poppins', sans-serif;
-        font-weight: 500;
-        font-size: 13px;
-        line-height: 31px;
-        letter-spacing: -0.26px;
-
-    }
-    footer img {
-        width: 167px;
+    .leftarrow:hover, .rightarrow:hover {
+        filter: invert(70%) sepia(58%) saturate(622%) hue-rotate(29deg) brightness(94%) contrast(83%);
     }
 }
