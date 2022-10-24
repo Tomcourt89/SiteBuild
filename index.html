@@ -27,6 +27,7 @@
         <img src="images/logo.svg" alt="Simpleview logo" class="logo">
         <a href="#" class="menu toggle"><img src="images/icon_hamburger.svg" alt="menu button"></a>
         <nav>
+            <!-- Uppercase in css for accessibility -->
             <ul class="uppercase navbar">
                 <li><a href="#">Explore</a></li>
                 <li><a href="#">Stay</a></li>
@@ -40,33 +41,28 @@
     </header>
     
     <main>
+        <!-- Empty elements added with css and js so that they can be transitioned out -->
         <section class="gallery">
             <div class="slider">
                 <div class="leftarrow"></div>
-                <h1>Explore the breathtaking mountain ranges</h1>
+                <h1 class="slidetitle"></h1>
                 <div class="rightarrow"></div>
             </div>
             
-            <!-- Add classes to be called in js slideshow -->
-            <div class="galleryslides slide1">
-                <img src="images/img_maingallery_couplemountains.jpg" alt="Couple viewing a mountain range">
-            </div>
-
-            <div class="galleryslides slide2">
-                <img src="images/img_maingallery_manonrock.jpg" alt="Person atop a rocky ridge">
-            </div>
-
-            <div class="galleryslides slide3">
-                <img src="images/img_maingallery_streetlights.jpg" alt="Neon lit street timelapse">
+            <div class="galleryslides">
+                <img class="slideimg" src="" alt="Slideshow of featured destinations">
             </div>
         </section>
 
         <section class="abouttext">
             <h2>Welcome to Simpleview Europe</h2>
+            <!-- Uppercase for accessibility -->
             <p class="uppercase light">We have been providing innovative, practical technology solutions to destinations across europe for twenty years.</p>
             <p class="xlight">Simpleview is a pan-European digital agency specialising in the tourism sector. Since the late 1990's we have been developing solutions for a wide range of Destination Management Organisations, working with National and Regional Tourist Boards</p>
         </section>
 
+        <!-- Cards reversed in css for accessibility,
+            reads title, description, image on each card. -->
         <section class="infocards">
             <div class="explore">
                 <div class="cardtext">
